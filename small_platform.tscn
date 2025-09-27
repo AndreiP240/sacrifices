@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpmfxaeeoq8rf"]
+
+[ext_resource type="Texture2D" uid="uid://4ilqx8w8e36c" path="res://assets/decorations/sprites/platforms.png" id="1_xkkb2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kbqvu"]
+size = Vector2(180, 66)
+
+[node name="Small Platform" type="AnimatableBody2D"]
+scale = Vector2(0.40000057, 0.5200001)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(11.336455, 7.318438)
+texture = ExtResource("1_xkkb2")
+region_enabled = true
+region_rect = Rect2(0, 32, 16, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kbqvu")
+one_way_collision = true
