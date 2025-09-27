@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://blbbo8q31mrou"]
+[gd_scene load_steps=19 format=3 uid="uid://blbbo8q31mrou"]
 
 [ext_resource type="Script" uid="uid://cww5kn60bcbob" path="res://movement.gd" id="1_3ddp3"]
 [ext_resource type="Texture2D" uid="uid://br6o3vnlu43k3" path="res://assets/slimes/yellow slime.png" id="2_c0ne2"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://h6tkty5wvrdn" path="res://yellow_slime.gd" id="8_neqfu"]
 [ext_resource type="Texture2D" uid="uid://cmagt7id0tssb" path="res://assets/tiles and background_foreground (new)/tiles and background_foreground (new)/tileset_32x32(new).png" id="10_4rud1"]
 [ext_resource type="Texture2D" uid="uid://s15sqx12k3u5" path="res://assets/decorations/sprites/world_tileset.png" id="11_7fvey"]
+[ext_resource type="PackedScene" uid="uid://d3j5frtp8fbrj" path="res://red_platform.tscn" id="12_7fvey"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4rud1"]
 size = Vector2(88.00839, 243.15112)
@@ -343,11 +344,12 @@ script = ExtResource("1_3ddp3")
 scale = Vector2(0.86599606, 0.95663184)
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-scale = Vector2(-7, -20.231)
+scale = Vector2(-7.024799, -20.033663)
 texture = ExtResource("6_18xev")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(-2.338272, -40.82598)
+scale = Vector2(0.9802841, 0.98285574)
 shape = SubResource("RectangleShape2D_4rud1")
 
 [node name="green_slime" type="Sprite2D" parent="."]
@@ -388,3 +390,6 @@ layer_0/tile_data = PackedInt32Array(1572869, 196608, 2, 1572870, 65536, 0, 1572
 tile_set = SubResource("TileSet_v7vy4")
 format = 2
 layer_0/tile_data = PackedInt32Array(2228340, 589824, 0, 2228341, 655360, 0, 2228342, 655360, 0, 2228343, 655360, 0, 2228344, 655360, 0, 2228347, 720896, 0, 2228346, 655360, 0, 2228345, 655360, 0, 1507343, 0, 13, 1572879, 0, 13, 1638415, 0, 13, 1703951, 0, 13, 1769487, 0, 13, 1769488, 0, 13, 1769489, 0, 13, 1703953, 0, 13, 1638417, 0, 13, 1769490, 0, 13, 1769491, 0, 13, 1703955, 0, 13, 1638419, 0, 13, 1572883, 0, 13, 1507347, 0, 13, 1769493, 0, 13, 1703957, 0, 13, 1572885, 0, 13, 1507349, 0, 13, 1638421, 0, 13, 1507350, 0, 13, 1507351, 0, 13, 1638422, 0, 13, 1769494, 0, 13, 1769495, 0, 13, 1507353, 0, 13, 1572889, 0, 13, 1638425, 0, 13, 1703961, 0, 13, 1769497, 0, 13, 1769498, 0, 13, 1769499, 0, 13, 1507359, 0, 13, 1507358, 0, 13, 1507357, 0, 13, 1572893, 0, 13, 1638429, 0, 13, 1703965, 0, 13, 1769501, 0, 13, 1769502, 0, 13, 1769503, 0, 13, 1507361, 0, 13, 1572897, 0, 13, 1638433, 0, 13, 1703969, 0, 13, 1769505, 0, 13, 1769506, 0, 13, 1769507, 0, 13, 1703971, 0, 13, 1638435, 0, 13, 1572899, 0, 13, 1507363, 0, 13, 1507362, 0, 13, 1507365, 0, 13, 1572901, 0, 13, 1638437, 0, 13, 1703973, 0, 13, 1769509, 0, 13, 1572902, 0, 13, 1638439, 0, 13, 1572904, 0, 13, 1507369, 0, 13, 1572905, 0, 13, 1638441, 0, 13, 1703977, 0, 13, 1769513, 0, 13, 1769515, 0, 13, 1703979, 0, 13, 1638443, 0, 13, 1572907, 0, 13, 1507371, 0, 13, 1507372, 0, 13, 1507373, 0, 13, 1638444, 0, 13, 1769516, 0, 13, 1769517, 0, 13, 1507375, 0, 13, 1572911, 0, 13, 1638447, 0, 13, 1769519, 0, 13, 1572914, 0, 13, 1703986, 0, 13, 1507380, 0, 13, 1572917, 0, 13, 1638453, 0, 13, 1703989, 0, 13, 1769524, 0, 13)
+
+[node name="Node" parent="." instance=ExtResource("12_7fvey")]
+position = Vector2(477, -428)

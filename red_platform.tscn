@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3j5frtp8fbrj"]
+
+[ext_resource type="Texture2D" uid="uid://deqxwtocmn5ri" path="res://assets/slimes/red_platform0.png" id="1_h6o84"]
+[ext_resource type="Texture2D" uid="uid://dgkndloxp1bge" path="res://assets/slimes/red_platform1.png" id="2_0rwef"]
+[ext_resource type="Texture2D" uid="uid://dhafvd4ei3pf" path="res://assets/slimes/red_platform2.png" id="3_5tb0w"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7bxi3"]
+animations = [{
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("1_h6o84")
+}, {
+"duration": 2.0,
+"texture": ExtResource("2_0rwef")
+}, {
+"duration": 4.0,
+"texture": ExtResource("3_5tb0w")
+}],
+"loop": false,
+"name": &"red_platform",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05ajh"]
+size = Vector2(44, 12)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -15)
+scale = Vector2(4.663382, 4.663382)
+sprite_frames = SubResource("SpriteFrames_7bxi3")
+animation = &"red_platform"
+frame = 2
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(4.663382, 4.663382)
+shape = SubResource("RectangleShape2D_05ajh")
+debug_color = Color(0.94052935, 0.22353452, 0.2667337, 0.41960785)
