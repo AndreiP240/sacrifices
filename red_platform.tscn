@@ -37,4 +37,5 @@ frame_progress = 1.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(4.66338, 4.66338)
 shape = SubResource("RectangleShape2D_05ajh")
+one_way_collision = true
 debug_color = Color(0.940529, 0.223535, 0.266734, 0.419608)

@@ -1,0 +1,74 @@
+[gd_scene load_steps=4 format=3 uid="uid://m5tgjefu1brn"]
+
+[ext_resource type="Script" uid="uid://non6wvl0n1m5" path="res://mainmenu.gd" id="1_e8kt5"]
+[ext_resource type="Texture2D" uid="uid://2aurto17xew4" path="res://assets/slimes/purple slime.png" id="1_mxk1q"]
+[ext_resource type="Texture2D" uid="uid://twqrwbvj6i1a" path="res://assets/slimes/red slime.png" id="2_q3kb3"]
+
+[node name="Mainmenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e8kt5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.0
+offset_top = -16.0
+offset_right = -21.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 50
+text = "Start"
+
+[node name="Container" type="Container" parent="."]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 143.0
+offset_right = 464.0
+offset_bottom = 183.0
+
+[node name="Label" type="Label" parent="Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Chase"
+
+[node name="PurpleSlime" type="Sprite2D" parent="."]
+position = Vector2(64, 585)
+scale = Vector2(7.5124254, 7.5124254)
+texture = ExtResource("1_mxk1q")
+
+[node name="RedSlime" type="Sprite2D" parent="."]
+position = Vector2(189, 591)
+scale = Vector2(7.2379837, 7.2379837)
+texture = ExtResource("2_q3kb3")
+
+[node name="Container2" type="Container" parent="."]
+layout_mode = 0
+offset_left = 539.0
+offset_top = 462.0
+offset_right = 1034.0
+offset_bottom = 643.0
+
+[node name="Label" type="Label" parent="Container2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "-Run away from the purple slime who copies your movements
+-If the purple slime catches you, you die
+-When the game starts RUN!!!
+-Dying might not be as bad as it seems..."
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

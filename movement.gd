@@ -18,13 +18,5 @@ func _physics_process(delta: float) -> void:
 	position_history.append(global_position)
 	if position_history.size() > 600:
 		position_history.pop_front()
-func _process(delta):
-	if Input.is_action_just_pressed("red_platform"):
-		summon_platform()
-func summon_platform():
-	var platform = PlatformScene.instantiate()
-	var offset = Vector2(0, 32)  # adjust depending on your player size
-	platform.position = global_position + offset
-	get_tree().current_scene.add_child(platform)
-	print("Platform spawned at:", platform.position)
-	print("Parent node:", get_parent())
+func is_grounded() -> bool:
+	return get_node("RayCast2D").is_colliding()
