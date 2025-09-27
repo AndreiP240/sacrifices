@@ -1,6 +1,6 @@
 extends CharacterBody2D
 const SPEED = 500.0
-const JUMP_VELOCITY = -400
+const JUMP_VELOCITY = -500
 var position_history: Array[Vector2] = []
 
 func _physics_process(delta: float) -> void:
