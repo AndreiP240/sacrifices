@@ -12,11 +12,16 @@ config_version=5
 
 config/name="Sacrifices"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 run/main_scene="uid://6svir75t6axb"
 config/features=PackedStringArray("4.5", "Forward Plus")
 =======
 run/main_scene="uid://cqfu7intqummr"
 config/features=PackedStringArray("4.4", "Forward Plus")
+>>>>>>> Stashed changes
+=======
+run/main_scene="uid://cqfu7intqummr"
+config/features=PackedStringArray("4.5", "Forward Plus")
 >>>>>>> Stashed changes
 config/icon="res://icon.svg"
 
@@ -41,4 +46,7 @@ jump={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+<<<<<<< Updated upstream
 environment/defaults/default_clear_color=Color(0.027451, 0.670588, 1, 1)
+=======
+>>>>>>> Stashed changes
