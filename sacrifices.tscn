@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqfu7intqummr"]
+
+[ext_resource type="Script" uid="uid://djqmd40j6kje7" path="res://player.gd" id="1_tin3r"]
+[ext_resource type="Texture2D" uid="uid://dur6gyr87n5fj" path="res://icon.svg" id="2_e1y17"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1y17"]
+size = Vector2(129, 129)
+
+[sub_resource type="TileSet" id="TileSet_wjhef"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_frqkp"]
+size = Vector2(7.048997, 5.2446766)
+
+[node name="Node" type="Node"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(562, 305)
+script = ExtResource("1_tin3r")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("2_e1y17")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_e1y17")
+debug_color = Color(0, 0.6368412, 0.40378425, 0.41960785)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(562, 305)
+tile_set = SubResource("TileSet_wjhef")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(492.5, 528.4976)
+rotation = -3.1415925
+scale = Vector2(247.55292, 15.826553)
+shape = SubResource("RectangleShape2D_frqkp")
+debug_color = Color(0.704171, 0, 0.19440633, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(492, 531)
+scale = Vector2(13.580776, 0.5575256)
+texture = ExtResource("2_e1y17")
