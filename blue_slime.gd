@@ -1,6 +1,6 @@
 extends Sprite2D
-@export var leader_path: NodePath
-@export var delay_frames := 20
+@export var leader_path: NodePath  # drag the player node here in the editor
+@export var delay_frames := 10     # ~1 second delay (depends on FPS)
 
 var leader: Node = null
 

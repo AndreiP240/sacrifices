@@ -28,13 +28,13 @@ size = Vector2(44, 12)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -15)
-scale = Vector2(4.663382, 4.663382)
+scale = Vector2(4.66338, 4.66338)
 sprite_frames = SubResource("SpriteFrames_7bxi3")
 animation = &"red_platform"
 frame = 2
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(4.663382, 4.663382)
+scale = Vector2(4.66338, 4.66338)
 shape = SubResource("RectangleShape2D_05ajh")
-debug_color = Color(0.94052935, 0.22353452, 0.2667337, 0.41960785)
+debug_color = Color(0.940529, 0.223535, 0.266734, 0.419608)
