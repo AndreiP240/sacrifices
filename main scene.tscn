@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://blbbo8q31mrou"]
+[gd_scene load_steps=21 format=3 uid="uid://blbbo8q31mrou"]
 
 [ext_resource type="Script" uid="uid://cww5kn60bcbob" path="res://movement.gd" id="1_3ddp3"]
 [ext_resource type="Texture2D" uid="uid://2aurto17xew4" path="res://assets/slimes/purple slime.png" id="6_18xev"]
@@ -6,13 +6,11 @@
 [ext_resource type="Script" uid="uid://bubdxrj37vxf7" path="res://void.gd" id="8_18xev"]
 [ext_resource type="Script" uid="uid://cwkdgth4sdumi" path="res://chase.gd" id="8_neqfu"]
 [ext_resource type="Texture2D" uid="uid://cmagt7id0tssb" path="res://assets/tiles and background_foreground (new)/tiles and background_foreground (new)/tileset_32x32(new).png" id="10_4rud1"]
-[ext_resource type="Script" uid="uid://gvbwe73og466" path="res://finish.gd" id="10_neqfu"]
+[ext_resource type="Script" path="res://finish.gd" id="10_neqfu"]
+[ext_resource type="Texture2D" uid="uid://xvrskdi82mk3" path="res://assets/decorations/sprites/abstract-textured-backgound.jpg" id="11_4rud1"]
 [ext_resource type="Texture2D" uid="uid://s15sqx12k3u5" path="res://assets/decorations/sprites/world_tileset.png" id="11_7fvey"]
-[ext_resource type="PackedScene" path="res://platform.tscn" id="11_ohk57"]
-[ext_resource type="PackedScene" path="res://small_platform.tscn" id="12_aovjg"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rud1"]
-size = Vector2(71.55872, 243.151)
+[ext_resource type="PackedScene" uid="uid://bfw4nwv0ybdjn" path="res://platform.tscn" id="11_ohk57"]
+[ext_resource type="PackedScene" uid="uid://bpmfxaeeoq8rf" path="res://small_platform.tscn" id="12_aovjg"]
 
 [sub_resource type="GDScript" id="GDScript_sgb2t"]
 resource_name = "touch"
@@ -344,28 +342,10 @@ sources/0 = SubResource("TileSetAtlasSource_52ei1")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7fvey"]
 size = Vector2(823, 555)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rud1"]
+size = Vector2(71.55872, 243.151)
+
 [node name="Node2D" type="Node2D"]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
-position = Vector2(14397, 4080)
-scale = Vector2(0.427668, -0.146965)
-script = ExtResource("1_3ddp3")
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-scale = Vector2(0.865996, 0.956632)
-
-[node name="red_slime" type="Sprite2D" parent="CharacterBody2D" groups=["player"]]
-scale = Vector2(5.2610903, -15.309769)
-texture = ExtResource("6_neqfu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" groups=["player"]]
-position = Vector2(2.787426e-07, 0)
-scale = Vector2(0.980284, 0.9828559)
-shape = SubResource("RectangleShape2D_4rud1")
-
-[node name="RayCast2D" type="RayCast2D" parent="CharacterBody2D"]
-position = Vector2(0, -6.8043413)
-target_position = Vector2(0, -150)
 
 [node name="purple_slime" type="Sprite2D" parent="."]
 position = Vector2(-1317, 1960)
@@ -521,6 +501,7 @@ shape = SubResource("RectangleShape2D_aqyhw")
 debug_color = Color(0, 0, 0, 0.41960785)
 
 [node name="TileMap" type="TileMap" parent="."]
+z_index = 10
 position = Vector2(-80, -16)
 tile_set = SubResource("TileSet_aovjg")
 format = 2
@@ -540,3 +521,28 @@ script = ExtResource("10_neqfu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
 position = Vector2(15631.5, 4062.5)
 shape = SubResource("RectangleShape2D_7fvey")
+
+[node name="AbstractTexturedBackgound" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(2806.75, -692.2499)
+scale = Vector2(1.2120832, 0.5714167)
+texture = ExtResource("11_4rud1")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
+scale = Vector2(0.427668, -0.146965)
+script = ExtResource("1_3ddp3")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+scale = Vector2(0.865996, 0.956632)
+
+[node name="red_slime" type="Sprite2D" parent="CharacterBody2D" groups=["player"]]
+scale = Vector2(5.2610903, -15.309769)
+texture = ExtResource("6_neqfu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" groups=["player"]]
+position = Vector2(2.787426e-07, 0)
+scale = Vector2(0.980284, 0.9828559)
+shape = SubResource("RectangleShape2D_4rud1")
+
+[node name="RayCast2D" type="RayCast2D" parent="CharacterBody2D"]
+target_position = Vector2(0, -150)
