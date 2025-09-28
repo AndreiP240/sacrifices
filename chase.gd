@@ -1,6 +1,6 @@
 extends Sprite2D
 @export var leader_path: NodePath
-@export var delay_frames := 45   
+@export var delay_frames := 55   
 var leader: Node = null
 func _ready():
 	leader = get_node(leader_path)

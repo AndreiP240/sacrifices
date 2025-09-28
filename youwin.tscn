@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://2qo7qb7227r"]
+
+[ext_resource type="Texture2D" uid="uid://bjacvl4lnwsfs" path="res://assets/slimes/blue slime.png" id="1_mvn2k"]
+[ext_resource type="Texture2D" uid="uid://h7uoxfkmkyaa" path="res://assets/slimes/green slime.png" id="2_qbnr1"]
+[ext_resource type="Texture2D" uid="uid://br6o3vnlu43k3" path="res://assets/slimes/yellow slime.png" id="3_ixl5n"]
+[ext_resource type="Texture2D" uid="uid://2aurto17xew4" path="res://assets/slimes/purple slime.png" id="4_v7drv"]
+[ext_resource type="Texture2D" uid="uid://twqrwbvj6i1a" path="res://assets/slimes/red slime.png" id="5_x47ai"]
+
+[node name="Youwin" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="Container" parent="."]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 266.0
+offset_right = 385.0
+offset_bottom = 306.0
+
+[node name="Label" type="Label" parent="Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Thank you for playing!"
+
+[node name="BlueSlime" type="Sprite2D" parent="."]
+position = Vector2(71.00001, 607.00006)
+scale = Vector2(5, 5)
+texture = ExtResource("1_mvn2k")
+
+[node name="GreenSlime" type="Sprite2D" parent="."]
+position = Vector2(193, 606.00006)
+scale = Vector2(5, 5)
+texture = ExtResource("2_qbnr1")
+
+[node name="YellowSlime" type="Sprite2D" parent="."]
+position = Vector2(311.00003, 609.00006)
+scale = Vector2(5, 5)
+texture = ExtResource("3_ixl5n")
+
+[node name="PurpleSlime" type="Sprite2D" parent="."]
+position = Vector2(852.00006, 609)
+scale = Vector2(5, 5)
+texture = ExtResource("4_v7drv")
+flip_h = true
+
+[node name="RedSlime" type="Sprite2D" parent="."]
+position = Vector2(982, 611)
+scale = Vector2(5, 5)
+texture = ExtResource("5_x47ai")
+flip_h = true

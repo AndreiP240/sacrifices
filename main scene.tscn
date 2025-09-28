@@ -1,14 +1,15 @@
-[gd_scene load_steps=18 format=3 uid="uid://blbbo8q31mrou"]
+[gd_scene load_steps=20 format=3 uid="uid://blbbo8q31mrou"]
 
 [ext_resource type="Script" uid="uid://cww5kn60bcbob" path="res://movement.gd" id="1_3ddp3"]
 [ext_resource type="Texture2D" uid="uid://2aurto17xew4" path="res://assets/slimes/purple slime.png" id="6_18xev"]
 [ext_resource type="Texture2D" uid="uid://twqrwbvj6i1a" path="res://assets/slimes/red slime.png" id="6_neqfu"]
 [ext_resource type="Script" uid="uid://bubdxrj37vxf7" path="res://void.gd" id="8_18xev"]
-[ext_resource type="Script" path="res://chase.gd" id="8_neqfu"]
+[ext_resource type="Script" uid="uid://cwkdgth4sdumi" path="res://chase.gd" id="8_neqfu"]
 [ext_resource type="Texture2D" uid="uid://cmagt7id0tssb" path="res://assets/tiles and background_foreground (new)/tiles and background_foreground (new)/tileset_32x32(new).png" id="10_4rud1"]
+[ext_resource type="Script" uid="uid://gvbwe73og466" path="res://finish.gd" id="10_neqfu"]
 [ext_resource type="Texture2D" uid="uid://s15sqx12k3u5" path="res://assets/decorations/sprites/world_tileset.png" id="11_7fvey"]
-[ext_resource type="PackedScene" uid="uid://bfw4nwv0ybdjn" path="res://platform.tscn" id="11_ohk57"]
-[ext_resource type="PackedScene" uid="uid://bpmfxaeeoq8rf" path="res://small_platform.tscn" id="12_aovjg"]
+[ext_resource type="PackedScene" path="res://platform.tscn" id="11_ohk57"]
+[ext_resource type="PackedScene" path="res://small_platform.tscn" id="12_aovjg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4rud1"]
 size = Vector2(71.55872, 243.151)
@@ -340,9 +341,13 @@ texture = ExtResource("11_7fvey")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_52ei1")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7fvey"]
+size = Vector2(823, 555)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
+position = Vector2(14397, 4080)
 scale = Vector2(0.427668, -0.146965)
 script = ExtResource("1_3ddp3")
 
@@ -528,3 +533,10 @@ layer_0/tile_data = PackedInt32Array(6291753, 262144, 10, 6357289, 262144, 10, 6
 
 [node name="Platform2" parent="." instance=ExtResource("11_ohk57")]
 position = Vector2(13288, 4502)
+
+[node name="Finish" type="Area2D" parent="."]
+script = ExtResource("10_neqfu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
+position = Vector2(15631.5, 4062.5)
+shape = SubResource("RectangleShape2D_7fvey")
